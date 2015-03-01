@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <RelativeLayout
+       android:id="@+id/titlebar_layout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:elevation="10dip"
+       android:background="@drawable/titlebar_background"
+       >
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/main_layout_title_txt"
+           android:textSize="@dimen/text_size"
+           android:textColor="@android:color/white"
+           android:layout_alignParentLeft="true"
+           android:layout_marginTop="10dip"
+           android:layout_marginLeft="20dip"
+           />
+
+   </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/categorybar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titlebar_layout"
+        android:layout_marginTop="-18dip"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/categorybar_background"
+        android:elevation="10dip"
+        >
+            <HorizontalScrollView
+                android:id="@+id/category_scrollview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_marginLeft="10dip"
+                android:layout_centerVertical="true"
+                >
+
+                <LinearLayout
+                    android:id="@+id/category_content"
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/news_list_rl"
+        android:layout_marginTop="200dip"
+        android:layout_below="@+id/categorybar_layout"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/news_swipeFrfreshlayout"
+        android:layout_width="320dip"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/categorybar_layout"
+        android:layout_marginTop="-5dip"
+        android:visibility="gone"
+        android:background="@android:color/white"
+        android:layout_centerInParent="true"
+    >
+
+        <ListView
+            android:id="@+id/news_list"
+            android:cacheColorHint="#00000000"
+            android:layout_width="340dip"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:divider="#00000000"
+            />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/comments_layout"
+   >
+
+    <RelativeLayout
+        android:id="@+id/comments_titlebar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/titlebar_background"
+        android:elevation="20dp"
+        android:layout_alignParentTop="true"
+    >
+
+        <TextView
+            android:id="@+id/comments_titlebar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"
+            android:layout_marginTop="10dip"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:text="跟帖"
+            />
+
+        <Button
+            android:id="@+id/comments_titlebar_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="50dip"
+            android:layout_marginTop="0dip"
+            android:textColor="@android:color/white"
+            android:background="@android:color/transparent"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="原  文"
+         />
+        
+        <ProgressBar
+            android:id="@+id/comments_titlebar_progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="18dip"
+            android:visibility="gone"
+            android:layout_toRightOf="@id/comments_titlebar_title"
+            style="?android:attr/progressBarStyleSmall"
+            />
+
+    </RelativeLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/comments_swipeFrfreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-15dip"
+        android:layout_below="@id/comments_titlebar_layout"
+        >
+        <ListView
+            android:id="@+id/comments_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-12dip"
+            android:scrollbars="none"
+            android:fadingEdge="none"
+            android:drawSelectorOnTop="false"
+            android:listSelector="@drawable/news_item_list_selector"
+            android:cacheColorHint="#00000000"
+            android:divider="@drawable/list_separator_line"
+        />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <include
+        android:id="@+id/comments_reply_frame"
+        layout="@layout/reply_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>

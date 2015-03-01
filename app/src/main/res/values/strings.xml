@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NewsClient</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="main_layout_title_txt">新闻客户端</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_new_detail">NewDetailActivity</string>
+    <string name="title_activity_comments">CommentsActivity</string>
+    <string name="newlist_url">http://192.168.1.104:8080/web/getSpecifyCategoryNews</string>
+    <string name="newdetail_url">http://10.0.2.2:8080/web/getNews</string>
+    <string name="sendcomment_url">http://192.168.1.104:8080/web/postComment</string>
+    <string name="getcomment_url">http://192.168.1.104:8080/web/getComments</string>
+
+</resources>
